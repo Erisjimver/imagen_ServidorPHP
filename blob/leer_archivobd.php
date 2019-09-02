@@ -6,6 +6,10 @@
 <body>
 
 <?php 
+	$id="";
+	$contenido="";
+	$tipo="";
+
 	
 	require("datos_conexion.php");
 
@@ -22,22 +26,28 @@
 	mysqli_set_charset($conexion,"utf8");//linea que permite mostrar 
 
 	
-	$consulta="select foto from productos where códigoartículo='AR01'";
+	$consulta="select * from archivos where id=4";
 	
 	$resultado=mysqli_query($conexion,$consulta);	
 
 
 	while($fila=mysqli_fetch_array($resultado)){
-		$ruta_img=$fila["foto"];
+		
+		$id=$fila["id"];
+		$contenido=$fila["contenido"];
+		$tipo=$fila["tipo"];
+		
 	}
-
+	echo "ID: " . $id . "<br>";
+	echo "Tipo: " . $tipo . "<br>";
+	echo "<img src='data:image/png; base64," . base64_encode($contenido) . "'>";
  ?>
 <div>
-	
-<img src="/intranet/uploads/<?php echo $ruta_img; ?>" alt='Imagen del primer articulo' width='25%'/>
+
 <!--
 	<img src="/intranet/uploads/$ruta_img">
-
+	
+<img src="/intranet/uploads/<?php echo $ruta_img; ?>" alt='Imagen del primer articulo' width='25%'/>
 -->
 
 </div>
