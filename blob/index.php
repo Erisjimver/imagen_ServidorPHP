@@ -14,17 +14,17 @@ table{
 </head>
 <body>
 
-	<form action="datos_imagen.php" method="post" enctype="multipart/form-data">
+	<form action="datos_archivos.php" method="post" enctype="multipart/form-data">
 
 
 		<table>
 
 			<tr>
-				<td><label for="imagen">Imagen: </label></td>
-				<td><input type="file" name="imagen" size="200"></td>
+				<td><label for="archivo">Imagen: </label></td>
+				<td><input type="file" name="archivo" size="200"></td>
 			</tr>
 			<tr>
-				<td colspan="2" style="text-align: center"><input type="submit" name="envie" value="Enviar imagen"></td>
+				<td colspan="2" style="text-align: center"><input type="submit" name="envie" value="Enviar Archivo"></td>
 			</tr>
 
 
